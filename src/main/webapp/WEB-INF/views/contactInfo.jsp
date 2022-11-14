@@ -42,6 +42,7 @@ ${msg}
 	<a href="updateContact?id=${contact.id}"><input type="button" value="Edit"></a>
 	<a href="deleteContact?id=${contact.id}"><input type="button" value="Delete"></a>
 	<a href="sendEmail?email=${contact.email}"><input type="button" value="Send Email"></a>
+	<td><a href="generateBill?id=${contact.id}"><input type="button" value="Generate Bill"></a></td>
 	<br><br>
 	<a href="viewAllContacts"><input type="button" value="Back"></a>
 	<br>

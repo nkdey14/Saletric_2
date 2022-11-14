@@ -10,4 +10,8 @@ public interface BillingService {
 
 	public List<Billing> findAllBills();
 
+	public Billing getBillByMob(String mobile);
+
+	public Billing findBillById(int id);
+
 }

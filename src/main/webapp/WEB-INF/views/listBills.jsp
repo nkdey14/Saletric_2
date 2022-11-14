@@ -10,7 +10,7 @@
 </head>
 <body>
 <div align="center">
-<a href="viewContactPage"><input type="button" value="Search"></a>
+<a href="searchBill"><input type="button" value="Search"></a>
 <br><br>
 	<h3>List of Bills</h3><br>
 	
@@ -32,7 +32,7 @@
 		
 		<tr>
 			<td>${bill.id}</td>
-			<td><a href="contactInfoPage?id=${bill.id}">${bill.firstName}</a></td>
+			<td><a href="billInfoPage?id=${bill.id}">${bill.firstName}</a></td>
 			<td>${bill.lastName}</td>
 			<td>${bill.email}</td>
 			<td>${bill.mobile}</td>

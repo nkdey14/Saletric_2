@@ -81,4 +81,39 @@ public class BillingController {
 		
 		return "listBills";
 	}
+	
+	@GetMapping("/searchBill")
+	public String getBillingInfo() {
+		
+		return "findBill";
+	}
+	
+	@PostMapping("/searchBillDetails")
+	public String getBillingData(@RequestParam("mobile") String mobile, Model model) {
+		
+		Billing bill = billingService.getBillByMob(mobile);
+		
+		if(bill != null) {
+			
+			model.addAttribute("bill", bill);
+			
+			return "billingInfo";
+			
+		}else {
+			
+			model.addAttribute("msg", "No record found!");
+			
+			return "findBill";
+		}
+	}
+	
+	@GetMapping("/billInfoPage")
+	public String showBillingData(@RequestParam("id") int id, Model model) {
+		
+		Billing bill = billingService.findBillById(id);
+		
+		model.addAttribute("bill", bill);
+		
+		return "billingInfo";
+	}
 }

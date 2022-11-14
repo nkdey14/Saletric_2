@@ -6,4 +6,6 @@ import com.saletric_2.entities.Billing;
 
 public interface BillingRepository extends JpaRepository<Billing, Integer> {
 
+	public Billing findBillByMobile(String mobile);
+
 }

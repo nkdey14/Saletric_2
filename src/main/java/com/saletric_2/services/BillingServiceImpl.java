@@ -1,6 +1,7 @@
 package com.saletric_2.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,22 @@ public class BillingServiceImpl implements BillingService {
 		List<Billing> bills = billingRepo.findAll();
 		
 		return bills;
+	}
+
+	@Override
+	public Billing getBillByMob(String mobile) {
+		
+		Billing bill = billingRepo.findBillByMobile(mobile);
+		
+		return bill;
+	}
+
+	@Override
+	public Billing findBillById(int id) {
+		
+		Billing bill = billingRepo.findById(id).get();
+		
+		return bill;
+		
 	}
 }
