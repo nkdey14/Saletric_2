@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List of Contacts</title>
+<title>List of Bills</title>
 </head>
 <body>
 <div align="center">
 <a href="viewContactPage"><input type="button" value="Search"></a>
 <br><br>
-	<h3>List of Contacts</h3><br>
+	<h3>List of Bills</h3><br>
 	
 	<table border='1' cellspacing='1' cellpadding='8'>
 		<tr>
@@ -22,29 +22,26 @@
 			<th>Email Id</th>
 			<th>Mob no.</th>
 			<th>City</th>
-			<th>Source</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Price</th>
 			<th>Send Email</th>
-			<th>Generate Bill</th>
 		</tr>
 		
-		<c:forEach var="contact" items="${contacts}">
+		<c:forEach var="bill" items="${bills}">
 		
 		<tr>
-			<td>${contact.id}</td>
-			<td><a href="contactInfoPage?id=${contact.id}">${contact.firstName}</a></td>
-			<td>${contact.lastName}</td>
-			<td>${contact.email}</td>
-			<td>${contact.mobile}</td>
-			<td>${contact.city}</td>
-			<td>${contact.source}</td>
-			<td><a href="updateContact?id=${contact.id}"><input type="button" value="Edit"></a></td>
-			<td><a href="deleteContact?id=${contact.id}"><input type="button" value="Delete"></a></td>
+			<td>${bill.id}</td>
+			<td><a href="contactInfoPage?id=${bill.id}">${bill.firstName}</a></td>
+			<td>${bill.lastName}</td>
+			<td>${bill.email}</td>
+			<td>${bill.mobile}</td>
+			<td>${bill.city}</td>
+			<td>${bill.product}</td>
+			<td>${bill.quantity}</td>
+			<td>${bill.price}</td>
 			<td><a href="sendEmail?email=${contact.email}"><input type="button" value="Send Email"></a></td>
-			<td><a href="generateBill?id=${contact.id}"><input type="button" value="Generate Bill"></a></td>
-		</tr>
-		
+		</tr>		
 		</c:forEach>
 	</table>
 	<br>
